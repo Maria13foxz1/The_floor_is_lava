@@ -7,6 +7,8 @@ public class MoveBall : MonoBehaviour
 {
     public float speed;
     PlayerMovement player;
+    public AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +46,11 @@ public class MoveBall : MonoBehaviour
         }
         else player.PlayerStop();
         if (Input.GetKeyDown(KeyCode.Space))
+        {
+            audioSource.Play();
             player.PlayerJump();
+        }
+            
     }
 
 }
